@@ -255,20 +255,67 @@
 </div>
             <div class="contact-form-box">
                 <h3>SEND US A MESSAGE</h3>
-                <form id="contact-msg-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="tel" placeholder="Your Phone Number" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <select required>
-                        <option value="" disabled selected>Service Interested In</option>
-                        <option value="starlight">Starlight Headliner</option>
-                        <option value="tinting">Window Tinting</option>
-                        <option value="wrapping">Vinyl Wrapping</option>
-                        <option value="chrome">Chrome Delete</option>
-                    </select>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn-form-submit">SEND MESSAGE</button>
-                </form>
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact-msg-form">
+
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="8eff806f-32bc-4ffd-a4ae-8d32bea5d288">
+
+    <!-- Email subject -->
+    <input type="hidden" name="subject" value="New Prestige Customs Website Inquiry">
+
+    <!-- Customer Name -->
+    <input 
+        type="text" 
+        name="name" 
+        placeholder="Your Name" 
+        required
+    >
+
+    <!-- Customer Phone -->
+    <input 
+        type="tel" 
+        name="phone" 
+        placeholder="Your Phone Number" 
+        required
+    >
+
+    <!-- Customer Email -->
+    <input 
+        type="email" 
+        name="email" 
+        placeholder="Your Email" 
+        required
+    >
+
+    <!-- Service -->
+    <select name="service" required>
+        <option value="" disabled selected>Service Interested In</option>
+        <option value="Starlight Headliner">Starlight Headliner</option>
+        <option value="Window Tinting">Window Tinting</option>
+        <option value="Vinyl Wrapping">Vinyl Wrapping</option>
+        <option value="Chrome Delete">Chrome Delete</option>
+    </select>
+
+    <!-- Customer Message -->
+    <textarea 
+        name="message" 
+        placeholder="Your Message" 
+        rows="5" 
+        required
+    ></textarea>
+
+    <!-- Spam protection -->
+    <input 
+        type="checkbox" 
+        name="botcheck" 
+        style="display:none;"
+    >
+
+    <button type="submit" class="btn-form-submit">
+        SEND MESSAGE
+    </button>
+
+</form>
             </div>
         </div>
 
