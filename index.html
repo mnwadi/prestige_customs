@@ -253,69 +253,49 @@
         </a>
     </div>
 </div>
-            <div class="contact-form-box">
-                <h3>SEND US A MESSAGE</h3>
-                <form action="https://api.web3forms.com/submit" method="POST" id="contact-msg-form">
+         <div class="contact-form-box">
+    <h3>SEND US A MESSAGE</h3>
+    <form action="https://api.web3forms.com/submit" method="POST" id="contact-msg-form">
 
-    <!-- Web3Forms Access Key -->
-    <input type="hidden" name="access_key" value="8eff806f-32bc-4ffd-a4ae-8d32bea5d288">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="8eff806f-32bc-4ffd-a4ae-8d32bea5d288">
 
-    <!-- Email subject -->
-    <input type="hidden" name="subject" value="New Prestige Customs Website Inquiry">
+        <!-- Email subject -->
+        <input type="hidden" name="subject" value="New Prestige Customs Website Inquiry">
 
-    <!-- Customer Name -->
-    <input 
-        type="text" 
-        name="name" 
-        placeholder="Your Name" 
-        required
-    >
+        <!-- Customer Name -->
+        <input type="text" name="name" placeholder="Your Name" required>
 
-    <!-- Customer Phone -->
-    <input 
-        type="tel" 
-        name="phone" 
-        placeholder="Your Phone Number" 
-        required
-    >
+        <!-- Customer Phone -->
+        <input type="tel" name="phone" placeholder="Your Phone Number" required>
 
-    <!-- Customer Email -->
-    <input 
-        type="email" 
-        name="email" 
-        placeholder="Your Email" 
-        required
-    >
+        <!-- Customer Email -->
+        <input type="email" name="email" placeholder="Your Email" required>
 
-    <!-- Service -->
-    <select name="service" required>
-        <option value="" disabled selected>Service Interested In</option>
-        <option value="Starlight Headliner">Starlight Headliner</option>
-        <option value="Window Tinting">Window Tinting</option>
-        <option value="Vinyl Wrapping">Vinyl Wrapping</option>
-        <option value="Chrome Delete">Chrome Delete</option>
-    </select>
+        <!-- Service -->
+        <select name="service" required>
+            <option value="" disabled selected>Service Interested In</option>
+            <option value="Starlight Headliner">Starlight Headliner</option>
+            <option value="Window Tinting">Window Tinting</option>
+            <option value="Vinyl Wrapping">Vinyl Wrapping</option>
+            <option value="Chrome Delete">Chrome Delete</option>
+        </select>
 
-    <!-- Customer Message -->
-    <textarea 
-        name="message" 
-        placeholder="Your Message" 
-        rows="5" 
-        required
-    ></textarea>
+        <!-- Customer Message -->
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
 
-    <!-- Spam protection -->
-    <input 
-        type="checkbox" 
-        name="botcheck" 
-        style="display:none;"
-    >
+        <!-- Spam protection -->
+        <input type="checkbox" name="botcheck" style="display:none;">
 
-    <button type="submit" class="btn-form-submit">
-        SEND MESSAGE
-    </button>
+        <button type="submit" class="btn-form-submit">
+            SEND MESSAGE
+        </button>
 
-</form>
+        <!-- Message feedback target -->
+        <div id="form-result" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
+
+    </form>
+</div>
             </div>
         </div>
 
@@ -327,5 +307,53 @@
     </section>
 
     <script src="main.js"></script>
+
+    <!-- Wrapped in script tags -->
+    <script>
+    const form = document.getElementById('contact-msg-form');
+    const result = document.getElementById('form-result');
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            result.innerHTML = "Sending message...";
+            result.style.color = "#ffffff";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = "Thank you! Your message has been sent.";
+                    result.style.color = "#00ff00";
+                } else {
+                    result.innerHTML = json.message || "Something went wrong. Please try again.";
+                    result.style.color = "#ff0000";
+                }
+            })
+            .catch(error => {
+                result.innerHTML = "Error sending message. Please call us directly.";
+                result.style.color = "#ff0000";
+            })
+            .then(function() {
+                form.reset();
+                setTimeout(() => {
+                    result.innerHTML = "";
+                }, 5000);
+            });
+        });
+    }
+    </script>
 </body>
 </html>
