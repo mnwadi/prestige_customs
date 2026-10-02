@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18018081234"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -8,6 +9,22 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-18018081234');
+    </script>
+
+    <!-- Event snippet for Submit lead form conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18018081234/78F3COmonI0dENKz2I9D',
+          'event_callback': callback
+      });
+      return false;
+    }
     </script>
 
     <meta charset="UTF-8">
@@ -33,10 +50,9 @@
         <nav class="navbar">
             <a href="#hero">Home</a>
             <a href="#services">Services</a>
-            
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-            <a href="tel:5198721851" class="btn-nav"><i class="fas fa-phone"></i> CALL NOW 519-872-1851</a>
+            <a href="tel:5198721851" onclick="return gtag_report_conversion('tel:5198721851');" class="btn-nav"><i class="fas fa-phone"></i> CALL NOW 519-872-1851</a>
         </nav>
     </header>
 
@@ -119,7 +135,7 @@
                         <li>Privacy</li>
                         <li>Lifetime Warranty</li>
                     </ul>
-                    <a href="tel:5198721851" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+                    <a href="tel:5198721851" onclick="return gtag_report_conversion('tel:5198721851');" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
                 </div>
             </div>
             <div class="service-panel-card">
@@ -133,7 +149,7 @@
                         <li>Color Change</li>
                         <li>Custom Designs</li>
                     </ul>
-                    <a href="tel:5198721851" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+                    <a href="tel:5198721851" onclick="return gtag_report_conversion('tel:5198721851');" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
                 </div>
             </div>
             <div class="service-panel-card">
@@ -147,7 +163,7 @@
                         <li>Grilles</li>
                         <li>Gloss Black Finishes</li>
                     </ul>
-                    <a href="tel:5198721851" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+                    <a href="tel:5198721851" onclick="return gtag_report_conversion('tel:5198721851');" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
                 </div>
             </div>
             <div class="service-panel-card">
@@ -161,7 +177,7 @@
                         <li>Remote Control</li>
                         <li>Premium Quality</li>
                     </ul>
-                    <a href="tel:5198721851" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+                    <a href="tel:5198721851" onclick="return gtag_report_conversion('tel:5198721851');" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
                 </div>
             </div>
             <div class="service-panel-card">
@@ -175,7 +191,7 @@
                         <li>Alcantara & Leather</li>
                         <li>Custom Color Stitching</li>
                     </ul>
-                    <a href="tel:5198721851" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+                    <a href="tel:5198721851" onclick="return gtag_report_conversion('tel:5198721851');" class="btn-card-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
                 </div>
             </div>
         </div>
@@ -187,10 +203,8 @@
             </div>
             <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=600&auto=format&fit=crop" alt="Machine Plotter Patterns">
         </div>
-        <a href="tel:5198721851" class="sticky-footer-phone-bar"><i class="fa-solid fa-phone"></i> CALL NOW 519-872-1851</a>
+        <a href="tel:5198721851" onclick="return gtag_report_conversion('tel:5198721851');" class="sticky-footer-phone-bar"><i class="fa-solid fa-phone"></i> CALL NOW 519-872-1851</a>
     </section>
-
-    <section id="about" class="about-section"></section>
 
     <section id="about" class="about-section">
         <div class="about-content-wrapper">
@@ -210,7 +224,7 @@
                 </div>
             </div>
         </div>
-        <a href="tel:5198721851" class="sticky-footer-phone-bar"><i class="fa-solid fa-phone"></i> CALL NOW 519-872-1851</a>
+        <a href="tel:5198721851" onclick="return gtag_report_conversion('tel:5198721851');" class="sticky-footer-phone-bar"><i class="fa-solid fa-phone"></i> CALL NOW 519-872-1851</a>
     </section>
 
     <section id="contact" class="contact-section">
@@ -244,62 +258,63 @@
                 </div>
 
                 <div class="social-follow-icons">
-    <h4>FOLLOW US</h4>
-    <div class="social-row-links">
-        <a href="https://www.instagram.com/prestige__custom/" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 28px; height: 28px; color: inherit;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-        </a>
-    </div>
-</div>
-         <div class="contact-form-box">
-    <h3>SEND US A MESSAGE</h3>
-    <form action="https://api.web3forms.com/submit" method="POST" id="contact-msg-form">
+                    <h4>FOLLOW US</h4>
+                    <div class="social-row-links">
+                        <a href="https://www.instagram.com/prestige__custom/" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 28px; height: 28px; color: inherit;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Web3Forms Access Key -->
-        <input type="hidden" name="access_key" value="8eff806f-32bc-4ffd-a4ae-8d32bea5d288">
+            <div class="contact-form-box">
+                <h3>SEND US A MESSAGE</h3>
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact-msg-form">
 
-        <!-- Email subject -->
-        <input type="hidden" name="subject" value="New Prestige Customs Website Inquiry">
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="8eff806f-32bc-4ffd-a4ae-8d32bea5d288">
 
-        <!-- Customer Name -->
-        <input type="text" name="name" placeholder="Your Name" required>
+                    <!-- Email subject -->
+                    <input type="hidden" name="subject" value="New Prestige Customs Website Inquiry">
 
-        <!-- Customer Phone -->
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <!-- Customer Name -->
+                    <input type="text" name="name" placeholder="Your Name" required>
 
-        <!-- Customer Email -->
-        <input type="email" name="email" placeholder="Your Email" required>
+                    <!-- Customer Phone -->
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
 
-        <!-- Service -->
-        <select name="service" required>
-            <option value="" disabled selected>Service Interested In</option>
-            <option value="Starlight Headliner">Starlight Headliner</option>
-            <option value="Window Tinting">Window Tinting</option>
-            <option value="Vinyl Wrapping">Vinyl Wrapping</option>
-            <option value="Chrome Delete">Chrome Delete</option>
-        </select>
+                    <!-- Customer Email -->
+                    <input type="email" name="email" placeholder="Your Email" required>
 
-        <!-- Customer Message -->
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <!-- Service -->
+                    <select name="service" required>
+                        <option value="" disabled selected>Service Interested In</option>
+                        <option value="Starlight Headliner">Starlight Headliner</option>
+                        <option value="Window Tinting">Window Tinting</option>
+                        <option value="Vinyl Wrapping">Vinyl Wrapping</option>
+                        <option value="Chrome Delete">Chrome Delete</option>
+                    </select>
 
-        <!-- Spam protection -->
-        <input type="checkbox" name="botcheck" style="display:none;">
+                    <!-- Customer Message -->
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
 
-        <button type="submit" class="btn-form-submit">
-            SEND MESSAGE
-        </button>
+                    <!-- Spam protection -->
+                    <input type="checkbox" name="botcheck" style="display:none;">
 
-        <!-- Message feedback target -->
-        <div id="form-result" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
+                    <button type="submit" class="btn-form-submit">
+                        SEND MESSAGE
+                    </button>
 
-    </form>
-</div>
+                    <!-- Message feedback target -->
+                    <div id="form-result" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
+
+                </form>
             </div>
         </div>
 
-        <a href="tel:5198721851" class="sticky-footer-phone-bar"><i class="fa-solid fa-phone"></i> CALL NOW 519-872-1851</a>
+        <a href="tel:5198721851" onclick="return gtag_report_conversion('tel:5198721851');" class="sticky-footer-phone-bar"><i class="fa-solid fa-phone"></i> CALL NOW 519-872-1851</a>
         
         <div class="bottom-copyright-strip">
             <p>&copy; 2026 PRESTIGE CUSTOMS. ALL RIGHTS RESERVED.</p>
@@ -308,7 +323,7 @@
 
     <script src="main.js"></script>
 
-    <!-- Wrapped in script tags -->
+    <!-- Form Handler with Google Ads Conversion Tracking -->
     <script>
     const form = document.getElementById('contact-msg-form');
     const result = document.getElementById('form-result');
@@ -337,6 +352,11 @@
                 if (response.status == 200) {
                     result.innerHTML = "Thank you! Your message has been sent.";
                     result.style.color = "#00ff00";
+
+                    // Fire Google Ads Conversion event on successful form submission
+                    if (typeof gtag_report_conversion === 'function') {
+                        gtag_report_conversion();
+                    }
                 } else {
                     result.innerHTML = json.message || "Something went wrong. Please try again.";
                     result.style.color = "#ff0000";
